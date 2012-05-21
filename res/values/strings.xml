@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MediaSnuggler</string>
+    <string name="version">0.1c</string>
+    <string name="rescan">Update Media</string>
+    <string name="dissolve">Stop</string>
+    <string name="copyright_text">Copyright vegaasen (vegaasen.com)</string>
+
+    <!--BUTTONS@MainActivity-->
+    <string name="btnActivateServerOff">Server is switched Off</string>
+    <string name="btnActivateServerOn">Server is switched On</string>
+    <string name="btnActivateWiFiOff">WiFi is switched Off</string>
+    <string name="btnActivateWiFiOn">WiFi is switched On</string>
+
+</resources>

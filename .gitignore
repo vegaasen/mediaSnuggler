@@ -8,9 +8,18 @@
 # Java class files
 *.class
 
-# generated files
-bin/
-gen/
-
 # Local configuration file (sdk path, etc)
 local.properties
+
+# Folders
+logs/
+target/
+.idea/
+bin/
+gen/
+out/
+
+# IDE Specifics
+*.iml
+*.ipr
+*.iws
