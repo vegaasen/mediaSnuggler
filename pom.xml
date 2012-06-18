@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>MediaSnuggler</name>
+
+    <groupId>com.vegaasen.android</groupId>
+    <artifactId>mediasnuggler</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>apk</packaging>
+    <url>https://github.com/vegaasen/mediasnuggler</url>
+
+    <developers>
+        <developer>
+            <name>Vegard Aasen</name>
+            <email>vegaasen@gmail.com</email>
+            <id>vegaasen</id>
+            <url>http://www.vegaasen.com/</url>
+            <organization>AWSome</organization>
+            <roles>
+                <role>Developer</role>
+                <role>Contributor</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <repositories>
+        <repository>
+            <id>4thline-repo</id>
+            <url>http://4thline.org/m2</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>2.2.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.fourthline.cling</groupId>
+            <artifactId>cling-support</artifactId>
+            <version>2.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>3.2.0</version>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+                    <sdk>
+                        <path>${env.ANDROID_HOME}</path>
+                        <platform>8</platform>
+                    </sdk>
+                    <androidManifestFile>${project.basedir}/src/main/android/AndroidManifest.xml</androidManifestFile>
+                    <resourceDirectory>${project.basedir}/src/main/android/res</resourceDirectory>
+                    <assetsDirectory>${project.basedir}/src/main/android/assets</assetsDirectory>
+                    <nativeLibrariesDirectory>${project.basedir}/src/main/android/native</nativeLibrariesDirectory>
+                    <resourceOverlayDirectory>${project.basedir}/src/main/android/overlay</resourceOverlayDirectory>
+                    <deleteConflictingFiles>true</deleteConflictingFiles>
+                    <undeployBeforeDeploy>true</undeployBeforeDeploy>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>6</maven.compiler.source>
+        <maven.compiler.target>6</maven.compiler.target>
+    </properties>
+
+</project>

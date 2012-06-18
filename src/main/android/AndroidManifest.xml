@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.gtfo.snuggle.activity"
+      android:versionCode="1"
+      android:versionName="0.1">
+
+    <!--PERMISSIONS USED FOR BROADCASTING-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
+    <uses-sdk android:minSdkVersion="8"
+              android:targetSdkVersion="8"
+    />
+
+    <!--APPLICATION ELEMENTS - add android:debuggable="true" -->
+    <application android:label="MediaSnuggle" android:icon="@drawable/icon">
+
+        <activity android:name=".MainActivity"
+                  android:theme="@android:style/Theme.NoTitleBar"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|keyboardHidden|fontScale">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!--SERVICES USED WITHIN APPLICATION-->
+        <service android:name="com.gtfo.snuggle.service.impl.MediaServiceImpl"/>
+        <service android:name="com.gtfo.snuggle.httpservlet.servlet.service.impl.HttpServerServiceImpl"/>
+        <!--This is used to be able to address upnp within android os.. this is the framework that I use..-->
+        <service android:name="org.fourthline.cling.android.AndroidUpnpServiceImpl"/>
+
+    </application>
+</manifest> 
